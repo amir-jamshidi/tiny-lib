@@ -13,22 +13,22 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # بهتره به v4 آپدیت کنید
         with:
-          persist-credentials: false
+          fetch-depth: 0  # برای تاریخچه کامل commitها (در صورت نیاز)
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 24
-          # cache: "npm"
+          # cache: "npm"  # اگر خواستید کش فعال کنید
 
       - name: Install dependencies
         run: npm install
 
       - name: Set environment variables
         run: |
-          if [ "${GITHUB_REF_NAME}" = "main" ]; then
+          if [ "${{ github.ref_name }}" = "main" ]; then
             echo "VITE_APP_ENV=production" >> $GITHUB_ENV
           else
             echo "VITE_APP_ENV=development" >> $GITHUB_ENV
@@ -45,20 +45,20 @@ jobs:
 
     permissions:
       contents: write
-      id-token: write
+      # id-token: write رو کامل حذف کنید ← این خط باعث فعال شدن OIDC می‌شه
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
+          fetch-depth: 0  # خیلی مهمه برای semantic-release (تحلیل commitها)
           persist-credentials: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 24
-          # cache: "npm"
-          registry-url: "https://registry.npmjs.org"
+          # registry-url: "https://registry.npmjs.org"  ← این خط رو حذف کنید (پیش‌فرض همینه و مشکل ایجاد می‌کنه)
 
       - name: Install dependencies
         run: npm install
@@ -67,8 +67,11 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          echo "NPM_TOKEN is: $NPM_TOKEN"
+          echo "NPM_TOKEN preview: ${NPM_TOKEN:0:4}...${NPM_TOKEN: -4}"
 
+      # اگر بعد از تغییرات بالا هنوز مشکل احراز هویت داشتید، این استپ رو اضافه کنید:
+      # - name: Setup .npmrc
+      #   run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Semantic Release
         env:
