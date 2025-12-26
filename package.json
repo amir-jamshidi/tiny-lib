@@ -1,0 +1,31 @@
+{
+  "name": "my-tiny-lib",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/my-tiny-lib.umd.cjs",
+  "module": "dist/my-tiny-lib.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-tiny-lib.js",
+      "require": "./dist/my-tiny-lib.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:dev": "vite build --mode development",
+    "build:prod": "vite build --mode production",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "husky": "^9.1.7"
+  }
+}
