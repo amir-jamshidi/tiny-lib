@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/amir-jamshidi/tiny-lib/compare/v1.0.1...v1.1.0) (2025-12-26)
+
+
+### Features
+
+* add some rules in package.json ([430c8bd](https://github.com/amir-jamshidi/tiny-lib/commit/430c8bdafe48f094f9dc98200b28baf2fe0dedf4))
+
 ## [1.0.1](https://github.com/amir-jamshidi/tiny-lib/compare/v1.0.0...v1.0.1) (2025-12-26)
 
 
