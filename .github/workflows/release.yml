@@ -63,10 +63,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Check NPM_TOKEN
+        run: |
+          if [ -z "$NPM_TOKEN" ]; then
+            echo "NPM_TOKEN is not set!"
+            exit 1
+          else
+            echo "NPM_TOKEN is set ✅"
+            # Optional: show length of token
+            echo "Length: ${#NPM_TOKEN}"
+          fi
+        shell: bash
+
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
-
-
