@@ -43,6 +43,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
+  permissions:
+    contents: write
+    id-token: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -62,5 +66,5 @@ jobs:
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN_ME }}
-        run: npx semantic-release --npm-token $NPM_TOKEN_ME
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release

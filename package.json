@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amir-jamshidi/tiny-lib.git"
+    "url": "https://github.com/amir-jamshidi/tiny-lib.git"
   },
   "scripts": {
     "build:dev": "vite build --mode development",
