@@ -12,6 +12,13 @@ module.exports = {
             }
         ],
         [
+            "@semantic-release/npm",
+            {
+                npmPublish: true
+            }
+        ],
+        "@semantic-release/github",
+        [
             "@semantic-release/git",
             {
                 assets: ["CHANGELOG.md", "package.json"],
