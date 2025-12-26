@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/amir-jamshidi/tiny-lib/compare/v1.5.0...v1.6.0) (2025-12-26)
+
+
+### Bug Fixes
+
+* conflict ([4e4a1e7](https://github.com/amir-jamshidi/tiny-lib/commit/4e4a1e7655eb9be7e26fd3d7623a88d73ceec0b2))
+
+
+### Features
+
+* add some LOG - TEST8 ([d7b09af](https://github.com/amir-jamshidi/tiny-lib/commit/d7b09af1bba8daec921982e8d12184f75fe0c46f))
+
 # [1.5.0](https://github.com/amir-jamshidi/tiny-lib/compare/v1.4.0...v1.5.0) (2025-12-26)
 
 
