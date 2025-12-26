@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/amir-jamshidi/tiny-lib/compare/v1.6.0...v1.7.0) (2025-12-26)
+
+
+### Features
+
+* implement some files ([3086ec2](https://github.com/amir-jamshidi/tiny-lib/commit/3086ec2fce56295453895d5b008c497b0ef3aaa5))
+
 # [1.6.0](https://github.com/amir-jamshidi/tiny-lib/compare/v1.5.0...v1.6.0) (2025-12-26)
 
 
