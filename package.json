@@ -5,6 +5,9 @@
   "type": "module",
   "main": "dist/my-tiny-lib.umd.cjs",
   "module": "dist/my-tiny-lib.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "import": "./dist/my-tiny-lib.js",
