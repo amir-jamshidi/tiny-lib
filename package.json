@@ -17,9 +17,15 @@
   "scripts": {
     "build:dev": "vite build --mode development",
     "build:prod": "vite build --mode production",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "semantic-release"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "semantic-release": "^25.0.2",
     "typescript": "~5.9.3",
     "vite": "^7.2.4"
   },
