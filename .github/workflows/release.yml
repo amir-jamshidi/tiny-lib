@@ -11,10 +11,6 @@ jobs:
     name: Build Project
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        branch: [develop, main]
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -32,7 +28,7 @@ jobs:
 
       - name: Set environment variables
         run: |
-          if [ "${{ matrix.branch }}" = "main" ]; then
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then
             echo "VITE_APP_ENV=production" >> $GITHUB_ENV
           else
             echo "VITE_APP_ENV=development" >> $GITHUB_ENV
@@ -50,6 +46,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
