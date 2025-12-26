@@ -21,6 +21,7 @@
   "scripts": {
     "build:dev": "vite build --mode development",
     "build:prod": "vite build --mode production",
+    "build": "vite build",
     "prepare": "husky",
     "release": "semantic-release"
   },
