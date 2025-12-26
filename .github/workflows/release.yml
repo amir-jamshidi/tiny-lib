@@ -45,20 +45,18 @@ jobs:
 
     permissions:
       contents: write
-      # id-token: write رو کامل حذف کنید ← این خط باعث فعال شدن OIDC می‌شه
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # خیلی مهمه برای semantic-release (تحلیل commitها)
+          fetch-depth: 0 
           persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          # registry-url: "https://registry.npmjs.org"  ← این خط رو حذف کنید (پیش‌فرض همینه و مشکل ایجاد می‌کنه)
 
       - name: Install dependencies
         run: npm install
@@ -68,10 +66,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           echo "NPM_TOKEN preview: ${NPM_TOKEN:0:4}...${NPM_TOKEN: -4}"
-
-      # اگر بعد از تغییرات بالا هنوز مشکل احراز هویت داشتید، این استپ رو اضافه کنید:
-      # - name: Setup .npmrc
-      #   run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Semantic Release
         env:
