@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/amir-jamshidi/tiny-lib/compare/v1.7.0...v1.7.1) (2025-12-26)
+
+
+### Bug Fixes
+
+* add ts files ([d945baa](https://github.com/amir-jamshidi/tiny-lib/commit/d945baa3faade25cdc437f99636b6681089dae73))
+
 # [1.7.0](https://github.com/amir-jamshidi/tiny-lib/compare/v1.6.0...v1.7.0) (2025-12-26)
 
 
