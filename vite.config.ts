@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
     build: {
@@ -7,5 +8,12 @@ export default defineConfig({
             name: "MyTinyLib",
             fileName: "my-tiny-lib"
         }
-    }
+    },
+    plugins: [
+        dts({
+            entryRoot: "src",
+            outDir: "dist",
+            insertTypesEntry: true
+        })
+    ]
 })
