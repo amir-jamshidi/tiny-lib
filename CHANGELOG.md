@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/amir-jamshidi/tiny-lib/compare/v1.0.0...v1.0.1) (2025-12-26)
+
+
+### Bug Fixes
+
+* update yml file ([ead4d47](https://github.com/amir-jamshidi/tiny-lib/commit/ead4d471a4366706b8e75e2d0d18adb50a5a1a28))
+
 # 1.0.0 (2025-12-26)
 
 
